@@ -32,39 +32,53 @@ Cada píxel:
 - eje01.c
 
 ## Compilación
-
+```bash
 make eje01
-
+```
 ## Ejecución
-
+```bash
 ./ eje01
 xdg-open texao\_no\_red.ppm
-
+```
 ## Código básico
 
 ### Cargar imagen
+```c
 SimpleImage* image = simpleImageLoad("texao.ppm");
+```
 
 ### Crear imagen
+```c
 SimpleImage* image = simpleImageCreate(256, 256);
+```
 
 ### Dimensiones
+```c
 int width = simpleImageGetWidth(image);
 int height = simpleImageGetHeight(image);
+```
 
 ### Leer píxel
+```c
 int r = simpleImageGetRed(image, x, y);
 int g = simpleImageGetGreen(image, x, y);
 int b = simpleImageGetBlue(image, x, y);
+```
 
 ### Modificar píxel
+```c
 simpleImageSetRed(image, x, y, 0);
+```
 
 ### Guardar
+```c
 simpleImageSave(image, "output.ppm");
+```
 
 ### Liberar memoria
+```c
 simpleImageDestroy(image);
+```
 
 ## Ejemplo
 ```c
@@ -95,14 +109,14 @@ int main(void) {
 
   return 0;
 }
-'''
+```
 
 ## Conversión de imágenes
 
 Usa ImageMagick:
-
+```bash
 convert input.jpg -compress none -define ppm:format=plain output.ppm
-
+```
 ## Notas
 
 - Solo maxValue = 255
