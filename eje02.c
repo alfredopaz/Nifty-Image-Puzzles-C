@@ -5,9 +5,9 @@ int main(void) {
   SimpleImage* image;
   int x, y, width, height;
 
-  image = simpleImageLoad("flowers.ppm");
+  image = simpleImageLoad("texao.ppm");
   if(image == NULL) {
-    fprintf(stderr, "No se pudo leer flowers.ppm\n");
+    fprintf(stderr, "No se pudo leer texao.ppm\n");
     return 1;
   }
 
@@ -21,14 +21,14 @@ int main(void) {
     }
   }
 
-  if(!simpleImageSave(image, "flowers_no_green_blue.ppm")) {
-    fprintf(stderr, "No se pudo guardar flowers_no_green_blue.ppm\n");
+  if(!simpleImageSave(image, "texao_no_green_blue.ppm")) {
+    fprintf(stderr, "No se pudo guardar texao_no_green_blue.ppm\n");
     simpleImageDestroy(image);
     return 1;
   }
 
   simpleImageDestroy(image);
-  printf("Imagen guardada en flowers_no_green_blue.ppm\n");
+  printf("Imagen guardada en texao_no_green_blue.ppm\n");
   return 0;
 }
 
