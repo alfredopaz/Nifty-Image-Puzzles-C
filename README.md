@@ -2,7 +2,7 @@
 
 ## Descripción
 
-SimpleImage es una biblioteca en C para manipulación básica de imágenes RGB, portada de [Nifty Image Puzzles][http://nifty.stanford.edu/2011/parlante-image-puzzle/] de Nick Parlante.
+SimpleImage es una biblioteca en C para manipulación básica de imágenes RGB, portada de [Nifty Image Puzzles](http://nifty.stanford.edu/2011/parlante-image-puzzle/) de Nick Parlante.
 Permite cargar, crear, modificar y guardar imágenes utilizando el formato PPM.
 
 Está diseñada con fines educativos para:
@@ -38,12 +38,12 @@ make eje01
 ## Ejecución
 
 ./ eje01
-xdg-open flowers\_no\_red.ppm
+xdg-open texao\_no\_red.ppm
 
 ## Código básico
 
 ### Cargar imagen
-SimpleImage* image = simpleImageLoad("flowers.ppm");
+SimpleImage* image = simpleImageLoad("texao.ppm");
 
 ### Crear imagen
 SimpleImage* image = simpleImageCreate(256, 256);
@@ -67,7 +67,7 @@ simpleImageSave(image, "output.ppm");
 simpleImageDestroy(image);
 
 ## Ejemplo
-
+```c
 #include <stdio.h>
 #include "simpleImage.h"
 
@@ -75,7 +75,7 @@ int main(void) {
   SimpleImage* image;
   int x, y, width, height;
 
-  image = simpleImageLoad("flowers.ppm");
+  image = simpleImageLoad("texao.ppm");
   if(image == NULL) {
     fprintf(stderr, "Error al cargar la imagen\n");
     return 1;
@@ -90,11 +90,12 @@ int main(void) {
     }
   }
 
-  simpleImageSave(image, "flowers_no_red.ppm");
+  simpleImageSave(image, "texao_no_red.ppm");
   simpleImageDestroy(image);
 
   return 0;
 }
+'''
 
 ## Conversión de imágenes
 
